@@ -2,17 +2,21 @@ import express from 'express'
 import logger from './config/logger.js';
 import morgan from 'morgan';
 import rateLimiter from './middleware/rateLimiter.middleware.js';
+import authenticate from './middleware/auth.middleware.js';
 import helmet from 'helmet';
 import cors from 'cors';
-
+import routes from './routes/index.js';
 const app = express();
-
+app.use((req, res, next) => {
+    console.log(req.method, req.originalUrl);
+    next();
+});
 app.use(express.json());
 /**
  * Security Headers
  */
 app.use(helmet());
-app.use(rateLimiter());
+
 
 /**
  * CORS
@@ -27,6 +31,8 @@ app.use(
         credentials: true,
     })
 );
+app.use(rateLimiter);
+
 /** morgan logger */
 app.use(
     morgan(
@@ -36,6 +42,9 @@ app.use(
         }
     )
 )
+
+app.use(authenticate);
+app.use(routes);
 
 
 app.get("/health", (req, res) => {
