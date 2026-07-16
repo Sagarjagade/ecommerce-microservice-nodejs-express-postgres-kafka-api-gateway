@@ -1,0 +1,13 @@
+export default {
+
+    RETRY_COUNT: 5,
+
+    CONNECTION_TIMEOUT: 3000,
+
+    REQUEST_TIMEOUT: 30000,
+
+    INITIAL_RETRY_TIME: 300,
+
+    MAX_RETRY_TIME: 30000,
+
+};
