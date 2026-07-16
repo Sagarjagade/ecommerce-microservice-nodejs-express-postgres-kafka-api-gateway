@@ -14,6 +14,7 @@ const register = async (req, res) => {
 }
 
 const login = async (req, res) => {
+
     try {
         const token = await authService.login(req.body)
 

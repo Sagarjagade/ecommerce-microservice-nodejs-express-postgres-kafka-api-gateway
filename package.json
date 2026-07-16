@@ -1,0 +1,25 @@
+{
+  "name": "ecommerce-microservice-nodejs-express-postgres-kafka-api-gateway",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sagarjagade/ecommerce-microservice-nodejs-express-postgres-kafka-api-gateway.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sagarjagade/ecommerce-microservice-nodejs-express-postgres-kafka-api-gateway/issues"
+  },
+  "homepage": "https://github.com/Sagarjagade/ecommerce-microservice-nodejs-express-postgres-kafka-api-gateway#readme",
+  "dependencies": {
+    "express": "^5.2.1",
+    "winston": "^3.19.0"
+  }
+}

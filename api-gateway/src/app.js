@@ -7,6 +7,9 @@ import helmet from 'helmet';
 import cors from 'cors';
 import routes from './routes/index.js';
 const app = express();
+import requestId from './middleware/requestId.middleware.js';
+import errorMiddleware from './middleware/error.middleware.js';
+
 app.use((req, res, next) => {
     console.log(req.method, req.originalUrl);
     next();
@@ -32,6 +35,7 @@ app.use(
     })
 );
 app.use(rateLimiter);
+app.use(requestId);
 
 /** morgan logger */
 app.use(
@@ -54,5 +58,6 @@ app.get("/health", (req, res) => {
         message: "API Gateway is running"
     });
 });
+app.use(errorMiddleware);
 
 export default app

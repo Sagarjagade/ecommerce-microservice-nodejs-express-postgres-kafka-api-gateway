@@ -11,6 +11,6 @@ app.get('/', async (req, res) => {
     })
 })
 
-app.use('/api/v1', authRoutes)
+app.use('/api/auth', authRoutes)
 
 export default app

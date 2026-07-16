@@ -4,10 +4,19 @@ import logger from "../config/logger.js";
 
 dotenv.config({ path: `${process.cwd()}/.env` });
 
+
+
 export default {
-    AUTH_SERVICE: process.env.AUTH_SERVICE,
-    PRODUCT_SERVICE: process.env.PRODUCT_SERVICE,
-    ORDER_SERVICE: process.env.ORDER_SERVICE,
-    PAYMENT_SERVICE: process.env.PAYMENT_SERVICE,
-    NOTIFICATION_SERVICE: process.env.NOTIFICATION_SERVICE,
+    auth: {
+        target: process.env.AUTH_SERVICE,
+        authRequired: false,
+    },
+    product: {
+        target: process.env.PRODUCT_SERVICE,
+        authRequired: true,
+    },
+    order: {
+        target: process.env.ORDER_SERVICE,
+        authRequired: true,
+    },
 };

@@ -15,4 +15,6 @@ router.post('/logout', authController.logout)
 
 router.post('/profile', verifyJWTToken, authController.profile)
 
+router.get('/verify', verifyJWTToken)
+
 export default router
