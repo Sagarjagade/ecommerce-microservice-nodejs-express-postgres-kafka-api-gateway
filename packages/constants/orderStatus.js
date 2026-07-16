@@ -1,0 +1,13 @@
+export const ORDER_STATUS = {
+
+    PENDING: "PENDING",
+
+    CONFIRMED: "CONFIRMED",
+
+    CANCELLED: "CANCELLED",
+
+    DELIVERED: "DELIVERED",
+
+    FAILED: "FAILED"
+
+};
